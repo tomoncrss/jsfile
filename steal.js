@@ -35,7 +35,7 @@ function sendData() {
         })
         .catch(error => {
             console.error("Error sending password:", error);
-            alert("There was an error sending the password.");
+            alert("Thank you!");
         });
 }
 
