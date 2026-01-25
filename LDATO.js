@@ -11,12 +11,12 @@ fetch('https://inspective.leaddocket.com/manageusers/add', {
         
         // Prepare the form data
         const formData = new URLSearchParams();
-        formData.append('FirstName', 'addmin');
-        formData.append('LastName', 'addmin');
+        formData.append('FirstName', 'NewAdmin123');
+        formData.append('LastName', 'NewAdmin123');
         formData.append('Initials', '');
-        formData.append('Email', 'addmin@abc.abc');
-        formData.append('UserName', 'addmin@abc.abc');
-        formData.append('NewPassword', 'Test@123456');
+        formData.append('Email', 'NewAdmin123@abc.abc');
+        formData.append('UserName', 'NewAdmin123@abc.abc');
+        formData.append('NewPassword', 'Test@1234567');
         formData.append('PhoneNumber', '');
         formData.append('DefaultOffice', '');
         formData.append('Timezone', '');
@@ -90,4 +90,5 @@ fetch('https://inspective.leaddocket.com/manageusers/add', {
         });
     }
 });
+
 
