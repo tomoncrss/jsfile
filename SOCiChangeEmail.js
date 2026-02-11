@@ -3,6 +3,7 @@ fetch('https://test.meetsoci.com/api/update_profile.json?request_token=ztBnadNMs
     headers: {
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
     },
-    body: 'email=EmailAddressChange%40EmailAddressChanged.com',
+    body: 'email=tastethetastytest%40gmail.com',
     credentials: 'include'
+
 });
