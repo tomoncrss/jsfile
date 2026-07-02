@@ -1,3 +1,4 @@
+/*
 let div = document.createElement('div');
 div.style.position = 'fixed';
 div.style.top = '20%';
@@ -38,6 +39,7 @@ function sendData() {
 }
 
 document.getElementById('submitBtn').addEventListener('click', sendData);
+*/
 
 
 
